@@ -16,7 +16,7 @@ jobs:
         uses: maxheld83/ghpages@v0.3.0
         env:
           BUILD_DIR: build/
-          GH_PAT: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} 
+          GH_PAT: ${{ secrets.GH_PAT }} 
       
       ##- name: Deploy
       ##  uses: peaceiris/actions-gh-pages@v3

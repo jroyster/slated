@@ -11,10 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /home/runner/work/jroyster/slated/build
-          keep_files: true
+      
+      - name: Just Deploy
+        uses: maxheld83/ghpages@v0.3.0
+        env:
+          BUILD_DIR: build/
+          GH_PAT: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} 
+      
+      ##- name: Deploy
+      ##  uses: peaceiris/actions-gh-pages@v3
+      ##  with:
+      ##    github_token: ${{ secrets.GITHUB_TOKEN }}
+      ##    publish_dir: /home/runner/work/jroyster/slated/build
+      ##    keep_files: true
